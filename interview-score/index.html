@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="interview">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row" ng-controller="InterviewController as ctrl">
+            <form name="ctrl.interviewForm" ng-submit="ctrl.submit()" class="col s12">
+                <div ng-repeat="section in ctrl.section">
+                    <item section="section"></item>
+                </div>
+                <button type="submit" class="waves-effect waves-light btn valign">Generate Result</button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Functionality Item</th>
+                        <th>Total Score</th>
+                        <th>Score</th>
+                        <th>reason</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="item in ctrl.section">
+                        <td>{{item.title}}</td>
+                        <td>{{item.totalScore}}</td>
+                        <td>{{item.selected}}</td>
+                        <td>{{item.reason}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="index.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<div class="card-panel">
+    <h5>{{$ctrl.section.title}}</h5>
+    <div class="divider"></div>
+    <div class="input-field">
+        <textarea required ng-model="$ctrl.section.reason" class="materialize-textarea"></textarea>
+        <label>reason</label>
+    </div>
+    <label>Score</label>
+    <select class="browser-default" required ng-options="score for score in $ctrl.scores" ng-model="$ctrl.section.selected">
+        <option value="" disabled selected>Choose your option</option>
+    </select>
+</div>
